@@ -25,7 +25,7 @@ public class TestPersonWarehouse {
         this.warehouse = new PersonWarehouse();
 
         Stream
-                .generate(factory::createRandomPerson)
+                .generate(PersonFactory::createRandomPerson)
                 .limit(9999)
                 .forEach(warehouse::addPerson);
     }
@@ -33,7 +33,7 @@ public class TestPersonWarehouse {
     @Test
     public void testAddPerson() {
         // given
-        Person person = factory.createRandomPerson();
+        Person person = PersonFactory.createRandomPerson();
 
         // when
         warehouse.addPerson(person);

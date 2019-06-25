@@ -18,7 +18,7 @@ public final class ListConverter extends PersonConversionAgent<List<Person>> {
 
     public ListConverter(int collectionSize) {
         this(Stream
-                .generate(new PersonFactory()::createRandomPerson)
+                .generate(PersonFactory::createRandomPerson)
                 .limit(collectionSize)
                 .collect(Collectors.toList()));
     }

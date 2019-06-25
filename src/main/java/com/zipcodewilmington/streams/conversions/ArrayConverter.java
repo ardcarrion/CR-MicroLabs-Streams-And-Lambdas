@@ -18,7 +18,7 @@ public final class ArrayConverter extends PersonConversionAgent<Person[]> {
 
     public ArrayConverter(int collectionSize) {
         this(Stream
-                .generate(new PersonFactory()::createRandomPerson)
+                .generate(PersonFactory::createRandomPerson)
                 .limit(collectionSize)
                 .toArray(Person[]::new));
     }

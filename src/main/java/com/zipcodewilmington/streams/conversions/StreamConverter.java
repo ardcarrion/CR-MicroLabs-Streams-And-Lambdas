@@ -19,7 +19,7 @@ public final class StreamConverter extends PersonConversionAgent<Stream<Person>>
 
     public StreamConverter(int collectionSize) {
         this(Stream
-                .generate(new PersonFactory()::createRandomPerson)
+                .generate(PersonFactory::createRandomPerson)
                 .limit(collectionSize));
     }
 

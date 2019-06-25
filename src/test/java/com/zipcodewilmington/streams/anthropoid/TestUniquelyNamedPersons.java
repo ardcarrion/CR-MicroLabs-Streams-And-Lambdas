@@ -19,11 +19,10 @@ public class TestUniquelyNamedPersons {
 
     @Before
     public void setup() {
-        this.factory = new PersonFactory();
         this.warehouse = new PersonWarehouse();
 
         Stream
-                .generate(factory::createRandomPerson)
+                .generate(PersonFactory::createRandomPerson)
                 .limit(9999)
                 .forEach(warehouse::addPerson);
     }
