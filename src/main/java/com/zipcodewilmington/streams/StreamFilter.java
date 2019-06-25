@@ -65,7 +65,7 @@ public class StreamFilter {
      */ //TODO
     public List<Person> toListMultiLine() {
         return personStream
-                .filter(p -> String.valueOf(p.getName().charAt(0)).equals(startingCharacter))
+                .filter(p -> p.getName().substring(1).contains(String.valueOf(startingCharacter)))
                 .collect(Collectors.toList());
     }
 
